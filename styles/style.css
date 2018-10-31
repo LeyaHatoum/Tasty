@@ -19,7 +19,6 @@ body {
 .wrapper {
   width: 80%;
   max-width: 1280px;
-  border: 2px solid red;
   margin: 0 auto;
 }
 
@@ -27,7 +26,46 @@ p {
   margin: 30px 0;
 }
 
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 5.5rem;
+  float: left;
+  margin: 0;
+  font-weight: normal;
+}
+
+h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 4.2rem;
+  margin: 0;
+  font-weight: normal;
+}
+
+h3, h4 {
+  font-family: 'Cabin', sans-serif;
+  font-weight: 700;
+  line-height: 3.5rem;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+h3 {
+  font-size: 3.2rem;
+}
+
+h4 {
+  font-size: 2.4rem;
+}
+
 /* HEADER */
+header label {
+  visibility: hidden;
+}
+
+header input {
+  display: none;
+}
 
 header {
   height: 100vh;
@@ -40,24 +78,21 @@ header img {
   min-height: 100%;
 }
 
-h1 {
-  font-family: 'Great Vibes', cursive;
-  font-size: 5.5rem;
-  float: left;
-  margin: 0;
-  font-weight: normal;
-}
-
 nav {
   font-family: 'Cabin', sans-serif;
   font-weight: 700;
   font-size: 2rem;
   text-transform: uppercase;
   float: right;
+  transition: all .25s ease;
 }
 
 nav a {
   margin-right: 10px;
+}
+
+nav a:hover {
+  color: #fdc800;
 }
 
 .landingTitle {
@@ -80,6 +115,93 @@ a {
   text-decoration: none;
 }
 
+@media (max-width: 650px) {
+
+  header {
+    padding: 0;
+  }
+
+  header .wrapper {
+    margin: 0;
+    width: 100%;
+  }
+  header label{
+    visibility: visible;
+    float: right;
+    font-size: 5rem;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1;
+  }
+  
+  header h1 {
+    line-height: 100%;
+    padding-top: 20px;
+    margin-left: 20px;
+  }
+
+  header nav {
+    width: 50vw;
+    height: 0;
+    background: rgba(256, 256, 256, 0.8);
+    position: absolute;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+  }
+  
+  header nav a {
+    display: block;
+    margin: 50px 0 0 0;
+    padding-left: 20px;
+    padding-bottom: 10%;
+    font-size: 2rem;
+  }
+  
+  header nav a:nth-child(1) {
+    padding-top: 50px;
+  }
+  
+  header input#toggle:checked + nav {
+    height: 100vh;
+    padding-top: 40px;
+  }
+
+  .landingTitle {
+    padding-top: 28vh;
+  }
+
+  .landingTitle p {
+    font-size: 12rem;
+  }
+
+  .landingTitle h3 {
+    font-size: 2.2rem;
+  }
+
+}
+
+@media (max-width: 350px) {
+  .landingTitle p {
+    font-size: 9rem;
+  }
+
+  .landingTitle h3 {
+    font-size: 2rem;
+  }
+
+  header nav {
+    width: 100vw;
+    text-align: center;
+  }
+
+  header nav a {
+    padding-left: 0;
+  }
+
+}
+
 /* ABOUT SECTION */
 
 .aboutTasty {
@@ -87,12 +209,7 @@ a {
   text-align: center;
   padding: 100px 21%;
 }
-h2 {
-  font-family: 'Great Vibes', cursive;
-  font-size: 42px;
-  margin: 0;
-  font-weight: normal;
-}
+
 
 button {
   font-family: 'Cabin', sans-serif;
@@ -104,6 +221,19 @@ button {
   padding: 18px 40px;
 }
 
+button:hover {
+  background-color: #232323;
+  color: #fdc800; 
+  border: 1px solid #fdc800;
+  padding: 17px 40px;
+}
+
+@media (max-width: 650px) {
+  .aboutTasty {
+    padding: 50px 20px;
+  }
+}
+
 /* QUICK LINKS SECTION */
 
 .quickLinks {
@@ -111,25 +241,52 @@ button {
   padding: 100px 0;
 }
 
+.quickLinks .wrapper {
+  width: 60%;
+}
 
-.quickLinks .wrapper div{
+.quickLinks .wrapper div {
   float: left;
   color:#f8f8f8;
   text-align: center;
   width: calc(100% / 3);
 }
 
+.quickLinks .wrapper div:hover {
+  color: #fdc800;
+}
+
 .quickLinks div div .fas {
   font-size: 4rem;
 }
 
-h3 {
-  font-family: 'Cabin', sans-serif;
-  font-weight: 700;
-  font-size: 3.2rem;
-  text-transform: uppercase;
-  margin-bottom: 0;
-  padding: 0;
+@media (max-width: 650px) {
+
+  .quickLinks {
+    padding: 50px 0;
+  }
+  .quickLinks .wrapper {
+    width: 100%;
+  }
+
+  .quickLinks .wrapper div {
+    float: none;
+    margin: 0 auto;
+    width: 100%;
+    padding-bottom: 20px;
+  }
+
+  .quickLinks .wrapper div:nth-child(3) {
+    padding-bottom: 0;
+  }
+
+  .quickLinks div div .fas {
+  font-size: 5rem;
+  }
+
+  .quickLinks div div h4 {
+    line-height: 3.1rem;
+  }
 }
 
 /* MOOD PICTURES SECTION */
@@ -151,6 +308,32 @@ h3 {
 
 .moodPictures div div:nth-child(3) {
   margin-right: 0;
+}
+
+@media (max-width: 900px) {
+  .moodPictures {
+    padding: 0;
+  }
+  
+  .moodPictures .wrapper {
+    width: 100%;
+  }
+
+  .moodPictures div div {
+    width: calc(100% / 3);
+    margin: 0;
+  }
+}
+
+@media (max-width: 650px) {
+
+  .moodPictures div div {
+    width: 50%;
+  }
+
+  .moodPictures div div:nth-child(3) {
+    display: none;
+  }
 }
 
 /* TIPS AND RECIPES SECTION */
@@ -192,6 +375,32 @@ h3 {
   margin: 0;
 }
 
+@media (max-width: 1190px) {
+  .recipesTips .tips div:nth-child(1),
+  .recipesTips .recipes div:nth-child(1) {
+    padding: 2%;
+  }
+}
+
+@media (max-width: 940px) {
+  .recipesTips .tips div:nth-child(1),
+  .recipesTips .recipes div:nth-child(1),
+  .recipesTips .tips div:nth-child(2),
+  .recipesTips .recipes div:nth-child(2) {
+    float: none;
+    width: 100%;
+  }
+
+  .recipesTips .tips div:nth-child(1),
+  .recipesTips .recipes div:nth-child(1) {
+    padding: 57px 50px;
+  }
+
+  .recipesTips h3 {
+    font-size: 3.2rem;
+  }
+
+}
 
 /* MEET THE COOK SECTION */
 .meetTheCook {
@@ -206,7 +415,6 @@ h3 {
 }
 
 .meetTheCook div div:nth-child(2) {
-  border: 2px solid green;
   float: right;
   max-width: 67%;
 }
@@ -218,6 +426,52 @@ h3 {
 .meetTheCook .wrapper div img {
   display: block;
   width: 100%;
+}
+
+@media (max-width: 900px) {
+
+  .meetTheCook {
+    padding: 50px 10%;
+  }
+
+  .meetTheCook .wrapper {
+    margin: 0;
+    width: 100%;
+  }
+
+  .meetTheCook div div:nth-child(1),
+  .meetTheCook div div:nth-child(2){
+    float: none;
+    max-width: 100%;
+  }
+
+  .meetTheCook div div:nth-child(1){
+    margin: 0 50px 50px 50px;
+  }
+
+  .meetTheCook div {
+    text-align: center;
+  }
+
+  .meetTheCook div p {
+    text-align: left;
+  }
+
+  .meetTheCook div div img {
+    max-width: 450px;
+    margin: 0 auto;
+  }
+
+}
+
+@media (max-width: 650px) {
+  .meetTheCook {
+    padding: 50px 5%;
+  }
+
+  .meetTheCook h2 {
+    font-size: 4.2rem;
+  }
 }
 
 /* FOOTER SECTION */
@@ -250,22 +504,23 @@ footer div div, footer div ul {
 
 footer div div {
   float: left;
-  border: 2px dashed green;
 }
 
 footer div ul {
-  float: right;
-  border: 2px dashed green;
   margin: 0;
-  padding-left: 2.5%;
+  padding-left: 2%;
+  display: inline-block;
 }
 
 footer div div ul {
   float: left;
   width: calc(92.5% / 3);
-  border: 2px solid darkgoldenrod;
   padding: 0;
-  margin-left: 2.5%;
+  margin-right: 2.5%;
+}
+
+footer div div ul:nth-child(2) li a{
+  text-transform: uppercase;
 }
 
 footer div ul, footer div div ul{
@@ -279,7 +534,15 @@ footer a {
   font-weight: normal;
 }
 
-footer h3 {
+footer a:hover {
+  color: #fdc800;
+}
+
+footer div div ul:nth-child(1){
+  line-height: 3rem;
+}
+
+footer h4 {
   line-height: 4rem;
   margin: 0;
 }
@@ -287,11 +550,21 @@ footer h3 {
 form {
   margin-top: 10px;
   width: 100%;
-  border: 2px solid darkgoldenrod;
+  height: 20%;
+}
+
+form span {
+  display: block;
+  overflow: hidden;
 }
 
 input {
   height: 58px;
+  width: 100%;
+}
+
+footer button {
+  float: right;
 }
 
 footer p {
@@ -306,19 +579,124 @@ footer p {
   width: 100%;
 }
 
-/* 
+@media (max-width: 1190px) {
 
-input {
-  height: 58px;
-  width: 72.5%;
-  margin: 0;
-  padding: 0;
-  float: left;
+  footer {
+    padding: 50px 0 115.2px 0;
+  }
+
+  footer div div, footer div ul {
+  width: 100%;
+  }
+
+  footer div div {
+    margin-top: 20px;
+  }
+
+  footer div ul {
+    text-align: center;
+    padding: 0;
+  }
+
+  footer div div ul:nth-child(1) {
+    margin: 0;
+  }
+
+  footer div div ul {
+    width: calc(95% / 3);
+  }
+
 }
 
-footer div ul:nth-child(3) li a {
-  text-transform: uppercase;
-} */
+@media (max-width: 650px) {
+
+  footer .wrapper {
+    width: 90%;
+    margin: 0 5%;
+  }
+
+  form {
+    position: relative;
+    height: calc(58px * 2);
+  }
+
+  form span {
+    overflow: visible;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+  }
+
+  form span input {
+    text-align: center;
+  }
+
+  form button {
+    position: absolute;
+    top: 68px;
+    right: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  footer div div ul {
+    width: 100%;
+    margin: 0;
+  }
+
+  footer div div ul:nth-child(1){
+    padding: 5px 10%;
+  }
+
+  footer div div ul:nth-child(2){
+    padding: 5px 0;
+  }
+
+  footer div div ul li {
+    display: inline-block;
+  }
+
+  footer div div ul li:nth-child(1){
+    width: 100%;
+  }
+
+  .itHasBorders li {
+    border-left: 2px solid white;
+    padding: 0 10px;
+    margin-bottom: 10px;
+  }
+
+  .itHasBorders li:nth-child(1) {
+    margin-bottom: 0;
+  }
+
+  .itHasBorders li:nth-child(1),
+  .itHasBorders li:nth-child(2) {
+    border: 0;
+  }
+
+  footer div div ul li h4 {
+    padding-bottom: 5px;
+  }
+
+  footer div div ul:nth-child(3) {
+    display: none;
+  }
+
+}
+
+@media (max-width: 385px) {
+
+  .itHasBorders li{
+    width: 100%;
+    border: 0;
+  }
+
+  .itHasBorders{
+    margin-top: 20px;
+  }
+}
 
 /* SOCIAL MEDIA ICONS */
 
@@ -336,4 +714,14 @@ aside {
 
 aside i {
   margin-bottom: 20px;
+}
+
+aside i:hover {
+  color: rgba( 253, 200, 0, 0.4);
+}
+
+@media (max-width: 650px) {
+  aside {
+    display: none;
+  }
 }

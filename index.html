@@ -15,6 +15,10 @@
     <header>
       <div class="wrapper clearfix">
         <h1>Tasty</h1>
+        <label for="toggle">
+          <i class="fas fa-bars"></i>
+        </label>
+        <input type="checkbox" id="toggle" name="toggle">
         <nav>
           <a href="#">Home</a>
           <a href="#">About</a>
@@ -42,15 +46,15 @@
       <div class="clearfix wrapper">
         <div>
           <i class="fas fa-utensils"></i>
-          <h3>recipes</h3>
+          <h4>recipes</h4>
         </div>
         <div>
           <i class="fas fa-book-open"></i>
-          <h3>cooking tips</h3>
+          <h4>cooking tips</h4>
         </div>
         <div>
           <i class="fas fa-envelope"></i>
-          <h3>contact</h3>
+          <h4>contact</h4>
         </div>
       </div>
     </section>
@@ -105,7 +109,9 @@
         <div>
           <h2>Meet the Cook</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pulvinar tortor nulla elementum eleifend. Vestibulum consequat vestibulum felis pharetra luctus. Quisque interdum orci quis convallis dapibus nulla pulvinar tortor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pulvinar tortor nulla elementum eleifend. Vestibulum consequat vestibulum felis pharetra luctus. Quisque interdum orci qui convallis dapibus nulla pulvinar tortor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pulvinar tortor nulla el. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pulvinar tortor nulla elementum eleifend. Vestibulum consequat vestibulum felis pharetra luctus.</p>
+        
           <button>Find out more</button>
+        
         </div>
       </div>
     </section>
@@ -113,40 +119,42 @@
     <!-- Footer Section -->
     <footer>
       <div class="wrapper clearfix">
+        <ul class="stayUpdated">
+          <li><h4>Stay Updated</h4></li>
+          <li>Subscribe to our newsletter to stay updated.</li>
+          <li>
+            <form class="clearfix">
+              <button >subscribe</button>
+              <label for="email" class="visuallyhidden">Please enter your email here</label>
+              <span>
+                <input type="email" name="email" id="email" value="email address">
+              </span>
+            </form>
+          </li>
+        </ul>
         <div class="clearfix">
           <ul>
-            <li><h3>Contact</h3></li>
-            <li><a href="">info@email.com</a></li>
-            <li><a href="">123-456-7890</a></li>
-            <li><a href="">123 some road,</a></li>
-            <li><a href="">Toronto, ON</a></li>
+            <li><h4>Contact</h4></li>
+            <li>info@email.com,</li>
+            <li>123-456-7890</li>
+            <li>123 some road.</li>
+            <li>Toronto, ON</li>
           </ul>
-          <ul>
-            <li><h3>Pages</h3></li>
+          <ul class="itHasBorders">
+            <li><h4>Pages</h4></li>
             <li><a href="">Home</a></li>
             <li><a href="">About</a></li>
             <li><a href="">Blog</a></li>
             <li><a href="">Contact</a></li>
           </ul>
           <ul>
-            <li><h3>Recent Posts</h3></li>
+            <li><h4>Recent Posts</h4></li>
             <li><a href="">Lemon pound cake</a></li>
             <li><a href="">Spaghetti Squash</a></li>
             <li><a href="">Sugar Free</a></li>
             <li><a href="">Lemonade</a></li>
           </ul>
         </div>
-        <ul>
-          <li><h3>Stay Updated</h3></li>
-          <li>Subscribe to our newsletter to stay updated</li>
-          <li>
-            <form class="clearfix">
-              <label for="email" class="visuallyhidden">Please enter your email here</label>
-              <input type="email" name="email" id="email" value="email address">
-              <button >subscribe</button>
-            </form>
-          </li>
-        </ul>
       </div>
       <p>Copyright &copy; 2018 HackerYou</p>
     </footer>
